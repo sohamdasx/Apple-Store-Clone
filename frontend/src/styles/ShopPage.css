@@ -1,0 +1,69 @@
+.shop-page {
+  text-align: center;
+  padding: 20px;
+  background-image: url("https://wallpapers.com/images/hd/apple-4k-y2isr29pud4pfkdl.jpg");
+  background-size: contain;
+}
+
+.shop-welcome {
+  color: white;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+.shop-page {
+  padding: 20px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  margin: 10px 0;
+}
+
+.product-card a {
+  color: #0070c9;
+  text-decoration: none;
+  font-weight: bold;
+}

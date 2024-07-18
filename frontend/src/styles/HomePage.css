@@ -1,63 +1,100 @@
 .home-page {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  background-image: url("https://www.apple.com/newsroom/images/product/iphone/standard/apple_iphone-12-spring21_purple_04202021_big.jpg.large.jpg");
+  background-size: cover;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 450px;
+}
+.welcome {
+  position: relative;
+  top: 24px;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.welcome {
+  text-align: center;
+  padding-bottom: 5px;
+}
+.welcome:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #ff0000;
+}
+.welcome:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #000000;
 }
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.shop-btn {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-.product-card {
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
+.shop-btn:active,
+.shop-btn:hover {
+  outline: 0;
 }
 
-.product-card img {
-    width: 100%;
-    height: auto;
-}
-.home-page {
-    padding: 20px;
-}
-
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.shop-btn span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
 }
 
-.product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 20px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.shop-btn:hover span {
+  background: none;
 }
 
-.product-card img {
-    max-width: 100%;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.product-card h2 {
+@media (min-width: 768px) {
+  .shop-btn {
     font-size: 24px;
-    margin: 10px 0;
-}
-
-.product-card p {
-    margin: 10px 0;
-}
-
-.product-card a {
-    color: #0070c9;
-    text-decoration: none;
-    font-weight: bold;
+    min-width: 196px;
+  }
 }

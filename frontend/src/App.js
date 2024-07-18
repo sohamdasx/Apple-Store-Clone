@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
 import "./App.css";
+import ShopPage from "./pages/ShopPage";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ShopPage />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />

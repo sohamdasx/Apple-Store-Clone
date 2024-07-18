@@ -10,7 +10,7 @@ export const useSignup = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, email, password }),
@@ -21,7 +21,7 @@ export const useSignup = () => {
       setIsLoading(false);
       setError(json.error);
     }
-    if (response.ok) {
+    if (response.ok) {  
       // save the user to local storage
       localStorage.setItem("user", JSON.stringify(json));
 
