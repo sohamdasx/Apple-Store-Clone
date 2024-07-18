@@ -8,6 +8,18 @@ const getProducts = async (req, res) => {
   res.status(200).json(products);
 };
 
+const getProduct = async (req, res) => {
+  const { id } = req.params;
+
+  const product = await Product.findById(id);
+
+  if (!product) {
+    return res.status(404).json({ error: "No such product" });
+  }
+
+  res.status(200).json(product);
+};
+
 const purchaseProduct = async (req, res) => {
   const { productId } = req.body;
   const user = await User.findById(req.user.id);
