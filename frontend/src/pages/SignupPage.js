@@ -1,30 +1,30 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import "../styles/RegisterPage.css";
+import { useSignup } from "../hooks/useSignup";
+import "../styles/SignupPage.css";
 
-const RegisterPage = () => {
-  const [name, setName] = useState("");
+const SignupPage = () => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { register } = useContext(AuthContext);
+  const { signup, error, isLoading } = useSignup();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await register(name, email, password);
+    await signup(username, email, password);
     navigate("/");
   };
 
   return (
     <div className="register-page">
       <form onSubmit={handleSubmit}>
-        <h1>Register</h1>
+        <h1>Signup</h1>
         <input
           type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="email"
@@ -38,10 +38,11 @@ const RegisterPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Register</button>
+        <button disabled={isLoading}>Sign up</button>
+        {error && <div className="error">{error}</div>}
       </form>
     </div>
   );
 };
 
-export default RegisterPage;
+export default SignupPage;

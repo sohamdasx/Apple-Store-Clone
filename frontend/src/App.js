@@ -1,26 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "./context/AuthContext";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
 import "./App.css";
 
 const App = () => {
   return (
-    <AuthProvider>
+    <AuthContextProvider>
       <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </Router>
-    </AuthProvider>
+    </AuthContextProvider>
   );
 };
 

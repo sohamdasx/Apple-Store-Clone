@@ -1,12 +1,14 @@
 const Product = require("../models/product");
 const User = require("../models/user");
+const mongoose = require("mongoose");
 
-exports.getProducts = async (req, res) => {
+const getProducts = async (req, res) => {
   const products = await Product.find({});
-  res.json(products);
+
+  res.status(200).json(products);
 };
 
-exports.purchaseProduct = async (req, res) => {
+const purchaseProduct = async (req, res) => {
   const { productId } = req.body;
   const user = await User.findById(req.user.id);
 
@@ -31,4 +33,9 @@ exports.purchaseProduct = async (req, res) => {
   await product.save();
 
   res.json({ message: "Product purchased successfully", user });
+};
+
+module.exports = {
+  getProducts,
+  purchaseProduct,
 };
