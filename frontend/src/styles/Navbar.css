@@ -1,37 +1,57 @@
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* position: sticky; */
+  background-color: #020403;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
+  list-style: none;
+  display: flex;
+  gap: 6px;
 }
 
-.nav-links li {
-    margin: 0 10px;
+.nav-links div {
+  font-size: 18px;
+  margin: 0 10px;
 }
 
 .nav-links a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
-.nav-links button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+.nav-links span {
+  padding: 10px;
+  border: 3px solid #232323;
+  margin-right: 18px;
+  width: auto;
+}
+
+.logout-btn {
+  color: #fff;
+  width: 5vw;
+  height: 4vh;
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  transition: background, color 0.1s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
 }

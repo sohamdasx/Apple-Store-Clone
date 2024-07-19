@@ -1,39 +1,88 @@
-.login-page, .register-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f7;
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --error: #e7195a;
+}
+.login-page,
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://wallpapers.com/images/high/apple-4k-dj0loy5ug3q88yxr.webp");
+  background-size: cover;
 }
 
-form {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+.login-form {
+  position: relative;
+  width: 24vw;
+  height: 50vh;
+  background-color: #ffffff21;
+  border: 1px solid #ffffff2e;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+.login-form h1 {
+  color: #fff;
+  font-size: 30px;
+  padding-top: 20px;
+  margin: 5px;
+  margin-bottom: 25px;
+}
+.form-inputs {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-inputs label {
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: 0.4px;
+  margin-bottom: 5px;
+}
+.form-inputs input {
+  border: none;
+  outline: none;
+  background-color: #ffffff12;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: calibri;
+  font-size: 17px;
+  color: #fff;
+}
+.login-btn {
+  background-color: #fff;
+  padding: 9px 0;
+  margin: 20px;
+  width: 85%;
+  border-radius: 5px;
+  text-align: center;
+  color: #000;
+  font-family: verdana;
+  font-size: 17px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.login-btn:hover {
+  background-color: #ffffffb9;
 }
 
-form h1 {
-    margin-bottom: 20px;
+div.error {
+  padding: 10px;
+  background: #000000;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
 }
 
-form input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-form button {
-    background-color: #0070c9;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
+input.error {
+  border: 1px solid var(--error);
 }

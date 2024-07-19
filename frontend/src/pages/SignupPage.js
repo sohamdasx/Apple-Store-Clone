@@ -13,33 +13,44 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await signup(username, email, password);
-    navigate("/");
+    if (username && password) {
+      if (!isLoading && !error) {
+        navigate("/");
+      }
+    }
   };
 
   return (
-    <div className="register-page">
-      <form onSubmit={handleSubmit}>
+    <div className="signup-page">
+      <form className="form" onSubmit={handleSubmit}>
         <h1>Signup</h1>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button disabled={isLoading}>Sign up</button>
-        {error && <div className="error">{error}</div>}
+        <div className="form-inputs">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="signup-btn" disabled={isLoading}>
+            Sign up
+          </button>
+          {error && <div className="error">{error}</div>}
+        </div>
       </form>
     </div>
   );

@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 import ProductPage from "./pages/ProductPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
 import "./App.css";
-import ShopPage from "./pages/ShopPage";
 
 const App = () => {
   return (

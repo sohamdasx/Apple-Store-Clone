@@ -16,31 +16,29 @@ const Navbar = () => {
       <Link to="/" className="nav-logo">
         Apple
       </Link>
-      <ul className="nav-links">
-        <li>
+      <div className="nav-links">
+        <div>
           <Link to="/">Home</Link>
-        </li>
-        {user ? (
+        </div>
+        {user && (
+          <div>
+            <span>{user.username}</span>
+            <button className="logout-btn" onClick={handleClick}>
+              Log out
+            </button>
+          </div>
+        )}
+        {!user && (
           <>
-            <li>
-              <Link to="/profile">{user.name}</Link>
-            </li>
-            <li>
-              <span>{user.username}</span>
-              <button onClick={handleClick}>Log out</button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
+            <div>
               <Link to="/login">Login</Link>
-            </li>
-            <li>
+            </div>
+            <div>
               <Link to="/signup">Signup</Link>
-            </li>
+            </div>
           </>
         )}
-      </ul>
+      </div>
     </nav>
   );
 };

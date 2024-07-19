@@ -11,28 +11,41 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(username, password);
-    navigate("/");
+    const result = await login(username, password);
+    if (username && password) {
+      if (result && !error) {
+        navigate("/");
+      }
+      if (!isLoading && !error) {
+        navigate("/");
+      }
+    }
   };
 
   return (
     <div className="login-page">
-      <form onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button disabled={isLoading}>Log in</button>
-        {error && <div className="error">{error}</div>}
+        <div className="form-inputs">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="login-btn" disabled={isLoading}>
+            Log in
+          </button>
+          {error && <div className="error">{error}</div>}
+        </div>
       </form>
     </div>
   );
