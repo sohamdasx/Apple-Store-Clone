@@ -1,12 +1,13 @@
 .shop-page {
   text-align: center;
   padding: 20px;
-  background-image: url("https://wallpapers.com/images/hd/apple-4k-y2isr29pud4pfkdl.jpg");
+  background-image: url("https://images8.alphacoders.com/131/1317062.png");
   background-size: contain;
 }
 
 .shop-welcome {
   color: white;
+  font-size: 36px;
 }
 
 .product-list {
